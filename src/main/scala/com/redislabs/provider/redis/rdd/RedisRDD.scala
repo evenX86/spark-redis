@@ -107,12 +107,12 @@ class RedisListRDD(prev: RDD[String], val rddType: String) extends RDD[String](p
   }
 }
 
-case class ZSetContext(val startPos: Long,
-                       val endPos: Long,
-                       val min: Double,
-                       val max: Double,
-                       val withScore: Boolean,
-                       val typ: String)
+case class ZSetContext(startPos: Long,
+                       endPos: Long,
+                       min: Double,
+                       max: Double,
+                       withScore: Boolean,
+                       typ: String)
 
 class RedisZSetRDD[T: ClassTag](prev: RDD[String],
                                 zsetContext: ZSetContext,
